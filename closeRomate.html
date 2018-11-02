@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用纯css3写的酷炫的鼠标 hover 关闭箭头旋转</title>
+    <style>
+        .closeRomate{
+            width: 60px;
+            height:60px;
+            position: absolute;
+            top:20px;
+            right:20px;
+            padding: 0;
+            background: none;
+            border:none;
+            outline: none;
+            transition: 300ms ease-out;
+            cursor: pointer;
+        }
+        .closeRomate:hover{
+            transform: rotate(270deg);
+        }
+        .closeRomate::after,.closeRomate::before{
+            content: '';
+            width: 40px;
+            height: 1px;
+            position: absolute;
+            left:50%;
+            top:50%;
+            background: #000;
+            margin-top: -0.5px;
+            margin-left:-20px;
+        }
+        .closeRomate::after{
+            transform: rotate(45deg);
+        }
+        .closeRomate::before{
+            transform: rotate(135deg)
+        }
+    </style>
+</head>
+<body>
+    <button class="closeRomate"></button>
+</body>
+
+</html>
